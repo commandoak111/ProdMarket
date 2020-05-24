@@ -7,7 +7,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const server = http.createServer(app);
-const port = process.env.PORT || 9000 
 app.use(express.static(__dirname + "/dist/Learningv1"));
 
 // Router
@@ -23,7 +22,7 @@ mongoose
   .connect(config.DB, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(
     () => {
-      console.log(`database is connected ${port}`);
+      console.log("database is connected");
     },
     (err) => {
       console.log("cannot connect to the database" + err);
@@ -42,7 +41,7 @@ app.use("/market/order", orderRouter);
 app.use("/market/address", addressRouter);
 app.use("/market/image",imageRouter)
 
-server.listen(port);
+server.listen(3010);
 
 
 // multer sample
