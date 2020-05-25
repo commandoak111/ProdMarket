@@ -47,7 +47,7 @@ app.use(bodyParser.json());
 app.use("/market/product", auth, productRouter);
 app.use("/market/order", auth, orderRouter);
 app.use("/market/address", auth, addressRouter);
-app.use("/market/image", auth, imageRouter);
+app.use("/market/image", imageRouter);
 app.use("/market/user", userRouter);
 
 server.listen(port);
